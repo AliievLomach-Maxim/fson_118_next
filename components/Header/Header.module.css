@@ -1,0 +1,8 @@
+.nav {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  gap: 12px;
+  padding: 4px;
+  list-style-type: none;
+}
