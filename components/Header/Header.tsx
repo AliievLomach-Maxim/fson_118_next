@@ -1,9 +1,7 @@
 import Link from 'next/link'
 import css from './Header.module.css'
-import { getCategories } from '@/lib/api'
 
 const Header = async () => {
-  const categories = await getCategories()
   return (
     <header>
       <nav>
@@ -12,16 +10,7 @@ const Header = async () => {
             <Link href='/'>Home</Link>
           </li>
           <li>
-            <ul>
-              <li>
-                <Link href='/notes/filter/all'>All Notes</Link>
-              </li>
-              {categories.map((category) => (
-                <li key={category.id}>
-                  <Link href={`/notes/filter/${category.id}`}>{category.name}</Link>
-                </li>
-              ))}
-            </ul>
+            <Link href='/notes'>Notes</Link>
           </li>
           <li>
             <Link href='/profile'>Profile</Link>
