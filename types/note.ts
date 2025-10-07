@@ -4,6 +4,12 @@ export interface Note {
   content: string
   categoryId: string
 }
+export interface NoteMeta {
+  id: string
+  title: string
+  description: string
+  ////...
+}
 
 export interface Category {
   id: string

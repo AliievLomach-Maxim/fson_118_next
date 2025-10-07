@@ -1,7 +1,7 @@
-import { Category, Note } from '@/types/note'
+import { Category, Note, NoteMeta } from '@/types/note'
 import axios from 'axios'
 
-axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.baseURL = 'https://next-docs-9f0504b0a741.herokuapp.com'
 
 interface NotesResponse {
   notes: Note[]
@@ -22,6 +22,11 @@ export const getNotes = async (params?: NotesRequest) => {
 
 export const getSingleNote = async (id: string) => {
   const { data } = await axios.get<Note>(`/notes/${id}`)
+  return data
+}
+
+export const getMetaForNote = async (id: string) => {
+  const { data } = await axios.get<NoteMeta>(`/notes/meta/${id}`)
   return data
 }
 
