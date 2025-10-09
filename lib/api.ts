@@ -7,6 +7,10 @@ interface NotesResponse {
   notes: Note[]
   total: number
 }
+export interface CreateNoteRequest {
+  content: string
+  categoryId: string
+}
 
 interface NotesRequest {
   categoryId?: string
@@ -32,5 +36,10 @@ export const getMetaForNote = async (id: string) => {
 
 export const getCategories = async () => {
   const { data } = await axios.get<Category[]>(`/categories`)
+  return data
+}
+
+export const createNote = async (body: CreateNoteRequest) => {
+  const { data } = await axios.post<Note>(`/notes`, body)
   return data
 }

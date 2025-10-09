@@ -4,6 +4,11 @@ export interface Note {
   content: string
   categoryId: string
 }
+export interface DraftNote {
+  title?: string
+  content?: string
+  categoryId?: string
+}
 export interface NoteMeta {
   id: string
   title: string
