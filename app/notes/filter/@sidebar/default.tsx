@@ -6,6 +6,9 @@ const Sidebar = async () => {
   return (
     <ul>
       <li>
+        <Link href='/notes/action/create'>Create new Note</Link>
+      </li>
+      <li>
         <Link href='/notes/filter/all'>All Notes</Link>
       </li>
       {categories.map((category) => (
