@@ -1,10 +1,13 @@
+import { getCategories } from '@/lib/api'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
   title: 'About NoteHUB',
 }
-const About = () => {
+const About = async () => {
+  const categories = await getCategories()
+  console.log('categories', categories)
   return (
     <div>
       <p>
