@@ -1,6 +1,6 @@
 import NoteList from '@/components/NoteList/NoteList'
 import SearchBar from '@/components/SearchBar/SearchBar'
-import { getNotes } from '@/lib/api'
+import { getNotes } from '@/lib/clientApi'
 
 interface Props {
   params: Promise<{ filters: string[] }>

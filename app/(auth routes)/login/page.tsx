@@ -1,12 +1,17 @@
 'use client'
 
-import { login, LoginRequest } from '@/lib/api'
+import { login, LoginRequest } from '@/lib/clientApi'
+import { useAuth } from '@/store/auth-store'
+import { useRouter } from 'next/navigation'
 
 const Login = () => {
+  const { setUser } = useAuth()
+  const router = useRouter()
   const handleAction = async (formData: FormData) => {
     const payload = Object.fromEntries(formData) as unknown as LoginRequest
     const user = await login(payload)
-    console.log('user', user)
+    setUser(user)
+    router.replace('/profile')
   }
   return (
     <form action={handleAction}>

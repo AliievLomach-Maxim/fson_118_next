@@ -3,6 +3,7 @@ import './globals.css'
 import Header from '@/components/Header/Header'
 import { Metadata } from 'next'
 import { Roboto, Padauk } from 'next/font/google'
+import AuthProvider from '@/components/AuthProvider/AuthProvider'
 
 const roboto = Roboto({
   weight: '600',
@@ -32,9 +33,11 @@ export default function RootLayout({
     <html lang='en'>
       <body className={`${roboto.variable} ${padauk.variable}`}>
         <TanstackProvider>
-          <Header />
-          {modal}
-          {children}
+          <AuthProvider>
+            <Header />
+            {modal}
+            {children}
+          </AuthProvider>
         </TanstackProvider>
       </body>
     </html>

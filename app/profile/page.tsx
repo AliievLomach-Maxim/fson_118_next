@@ -1,9 +1,11 @@
-import css from './page.module.css'
+import { getServerMe } from '@/lib/serverApi'
 
-const Profile = () => {
+const Profile = async () => {
+  const user = await getServerMe()
+  console.log('user', user)
   return (
     <div>
-      <h1 className={css.title}>Profile</h1>
+      <h1>Profile</h1>
     </div>
   )
 }

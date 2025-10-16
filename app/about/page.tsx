@@ -1,4 +1,4 @@
-import { getCategories } from '@/lib/api'
+import { getCategories } from '@/lib/clientApi'
 import { Metadata } from 'next'
 import Image from 'next/image'
 
