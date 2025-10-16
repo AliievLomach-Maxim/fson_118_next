@@ -1,5 +1,5 @@
 import BackButton from '@/components/BackButton'
-import { getSingleNote } from '@/lib/api'
+import { getSingleNote } from '@/lib/clientApi'
 
 interface Props {
   params: Promise<{ noteId: string }>

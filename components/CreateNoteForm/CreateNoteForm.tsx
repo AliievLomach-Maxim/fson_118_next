@@ -1,6 +1,6 @@
 'use client'
 
-import { createNote, CreateNoteRequest } from '@/lib/api'
+import { createNote, CreateNoteRequest } from '@/lib/clientApi'
 import { useDraftNote } from '@/store/note-store'
 import { Category } from '@/types/note'
 import { useRouter } from 'next/navigation'
